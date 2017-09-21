@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    image: microsoft/mssql-server-windows-express
+    environment:
+      SA_PASSWORD: "FD0gO0WLh2uBBFuh"
+      ACCEPT_EULA: "Y"
+
+  parser:
+    build: "parser"
+
+  rabbit:
+    image: rabbitmq
