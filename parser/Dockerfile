@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.0-sdk
+FROM microsoft/dotnet
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
@@ -8,4 +8,4 @@ RUN dotnet restore
 # copy and build everything else
 COPY . ./
 RUN dotnet publish -c Release -o out
-ENTRYPOINT ["dotnet", "out/dotnetapp.dll"]
+ENTRYPOINT ["dotnet", "out/parser.dll"]
